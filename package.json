@@ -1,0 +1,14 @@
+{
+  "name": "mco-parser",
+  "version": "0.0.1",
+  "description": "This software parses MCO contracts represented in TURTLE  and converts them in IPR Contractual Objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mirko Zichichi <mikerz83@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@frogcat/ttl2jsonld": "0.0.6"
+  }
+}

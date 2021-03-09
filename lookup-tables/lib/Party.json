@@ -1,0 +1,12 @@
+{
+  "@id": ["identifier"],
+  "mco-core:hasvcard": ["details"],
+  "dc:description": ["metadata"],
+  "mco-core:address": ["address"],
+  "mco-core:signature": ["signature"],
+  "mvco:hassocialtag": ["socialTag"],
+  "mvco:actonbehalfof": ["actOnBehalfOf"],
+  "mvco:belongsto": ["belongsToCollective"],
+  "mvco:isrightsownerof": ["isRightsOwnerOf"],
+  "mvco:hassignatory": ["signatory"]
+}

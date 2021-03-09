@@ -1,0 +1,10 @@
+{
+  "@id": ["identifier"],
+  "mco-core:implements": ["textClauses"],
+  "mco-core:obligatesaction": ["act"],
+  "mco-core:permitsaction": ["act"],
+  "mco-core:forbidsaction": ["act"],
+  "mco-core:actedover": ["actObjects"],
+  "mco-core:hasrequired": ["constraints"],
+  "mco-core:issuedby": ["issuer"]
+}
