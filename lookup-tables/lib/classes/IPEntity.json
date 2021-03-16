@@ -1,0 +1,16 @@
+{
+  "@id": ["identifier"],
+  "dc:description": ["metadata"],
+  "mvco:hassocialtag": ["socialTag"],
+  "avco:isdigital": ["isDigital"],
+  "mvco:hasrightsowner": ["rightsOwners"],
+  "mvco:ismadeupof": ["isMadeUpOf"],
+  "mvco:resultedfrom": ["resultedFrom"],
+  "avco:isaudio": ["isAudio"],
+  "avco:hassegment": ["segments"],
+  "avco:hastrack": ["tracks"],
+  "avco:interval": ["interval"],
+  "avco:segmentof": ["segmentOf"],
+  "avco:contains": ["contains"],
+  "avco:ontrack": ["onTrack"]
+}

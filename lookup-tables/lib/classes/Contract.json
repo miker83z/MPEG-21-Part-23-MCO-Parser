@@ -1,0 +1,15 @@
+{
+  "@id": ["identifier"],
+  "dc:description": ["metadata"],
+  "mco-core:hasparty": ["parties"],
+  "mco-core:hasgoverninglaw": ["governingLaw"],
+  "mco-core:hascourt": ["court"],
+  "mco-core:iscourtjurisdictionexclusive": ["isCourtJurisdictionExclusive"],
+  "mco-core:textversion": ["textVersion"],
+  "mco-core:encryptedcontractpart": ["encryptedTextVersion"],
+  "mco-core:supersedes": ["contractRelations", "supersedes"],
+  "mco-core:cancels": ["contractRelations", "cancels"],
+  "mco-core:isamendmentof": ["contractRelations", "isAmendmentOf"],
+  "mco-core:prevailsover": ["contractRelations", "prevailsOver"],
+  "mco-core:issignedby": ["signatories"]
+}

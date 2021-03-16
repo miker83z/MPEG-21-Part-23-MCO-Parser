@@ -1,0 +1,18 @@
+{
+  "@id": ["identifier"],
+  "mvco:actedby": ["actedBy"],
+  "mvco:actedover": ["actedOver"],
+  "mvco:resultsin": ["resultsIn"],
+  "mvco:impliesalso": ["impliesAlso"],
+  "mvco:rightgivenby": ["rightGivenBy"],
+  "mco-ipre:sellsdeontic": ["sellsDeontic"],
+  "mco-core:isOnLoan": ["isOnLoan"],
+  "mco-core:hasrecipient": ["recipients"],
+  "mco-pane:hasbeneficiary": ["beneficiaries"],
+  "mco-pane:hasincomesource": ["incomeSources"],
+  "mco-pane:hasamount": ["amount"],
+  "mco-pane:hascurrency": ["currency"],
+  "mco-pane:hasincomepercentage": ["incomePercentage"],
+  "mco-pane:hasrecipient": ["recipients"],
+  "mco-pane:isabout": ["isAbout"]
+}

@@ -1,5 +1,5 @@
-const { addElement } = require('./AddElement');
-const lut = require('../../lookup-tables/lib/Party');
+const { addElement } = require('../AddElement');
+const lut = require('../../../lookup-tables/lib/classes/Party');
 
 const partyObj = {
   identifier: 'string',
@@ -9,8 +9,8 @@ const partyObj = {
   address: 'string',
   deonticsIssued: 'array',
   actionsIsSubject: 'array',
-  belongsToCollective: 'array',
   signature: 'string',
+  extra: 'map',
 };
 const userObj = {
   ...partyObj,
@@ -18,6 +18,7 @@ const userObj = {
   signature: 'string',
   socialTag: 'string',
   actOnBehalfOf: 'array',
+  belongsToCollective: 'array',
   isRightsOwnerOf: 'array',
 };
 const organizationObj = {
@@ -40,13 +41,12 @@ const generateParty = (classData, payload) => {
         modelObj = organizationObj;
         break;
       default:
-        throw new Error('Party generation error');
         break;
     }
 
   Object.keys(payload).forEach((k) => {
     if (lut[k] !== undefined) addElement(modelObj, obj, lut[k], payload[k], k);
-    else addElement(modelObj, obj, 'details', payload[k], k);
+    else if (k !== '@type') addElement(modelObj, obj, 'extra', payload[k], k);
   });
 
   return obj;

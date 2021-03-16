@@ -4,15 +4,19 @@ const addElement = (modelObj, obj, key, value, origKey) => {
   else {
     switch (modelObj[key]) {
       case 'string':
-        obj[key] = value;
+        obj[key] = getStringOrObject(value);
         break;
       case 'array':
         if (obj[key] === undefined) obj[key] = [];
         if (value instanceof Array)
-          value.forEach((v) => obj[key].push(v['@id']));
-        else obj[key].push(value);
+          value.forEach((v) => obj[key].push(getStringOrObject(v)));
+        else obj[key].push(getStringOrObject(value));
         break;
       case 'map':
+        if (key instanceof Array && key.length > 1) {
+          key = key[0];
+          origKey = key[1];
+        }
         if (obj[key] === undefined) obj[key] = {};
         obj[key][origKey] = value;
         break;
@@ -24,8 +28,20 @@ const addElement = (modelObj, obj, key, value, origKey) => {
         break;
       default:
         throw new Error('Generation error');
-        break;
     }
+  }
+};
+
+const getStringOrObject = (value) => {
+  switch (typeof value) {
+    case 'string':
+      return value;
+      break;
+    case 'object':
+      return value['@id'];
+    default:
+      throw new Error('Generation error');
+      break;
   }
 };
 
