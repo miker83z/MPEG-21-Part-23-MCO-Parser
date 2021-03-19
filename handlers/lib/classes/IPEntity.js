@@ -14,7 +14,7 @@ const handleIPEntity = (
   parentContractId
 ) => {
   if (parsed(mediaContractualObjects, element)) return;
-  // generate a party object
+  // generate an IPEntity object
   const ipentityObj = generators.generateIPEntity(classData, element);
   // save the object
   addToObjectsSet(mediaContractualObjects, ipentityObj.identifier, ipentityObj);

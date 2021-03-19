@@ -11,7 +11,7 @@ const handleTrack = (
   parentContractId
 ) => {
   if (parsed(mediaContractualObjects, element)) return;
-  // generate a party object
+  // generate a track object
   const trackObj = generators.generateTrack(classData, element);
   // save the object
   addToObjectsSet(mediaContractualObjects, trackObj.identifier, trackObj);

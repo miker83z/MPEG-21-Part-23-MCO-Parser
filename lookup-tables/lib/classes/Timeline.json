@@ -1,4 +1,3 @@
 {
-  "@id": ["identifier"],
-  "mco-core:hasvcard": ["details"]
+  "@id": ["identifier"]
 }

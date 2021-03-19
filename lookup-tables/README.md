@@ -1,0 +1,2 @@
+#Look Up Table
+The JSON files in this folder constitute the Look Up Table used thoughout the other parts. In particular the `./lib/AllClasses.json` file includes the LUT for associating all the `owl:Class` to classes and sub-classes of the specification. All the files in `./lib/classes/` contain LUTs for each type of class where the classes' properties are associated to fields in Media Contractual Objects.

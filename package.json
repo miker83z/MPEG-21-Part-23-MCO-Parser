@@ -9,6 +9,7 @@
   "author": "Mirko Zichichi <mikerz83@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@frogcat/ttl2jsonld": "0.0.6"
+    "@frogcat/ttl2jsonld": "0.0.6",
+    "command-line-args": "^5.1.1"
   }
 }

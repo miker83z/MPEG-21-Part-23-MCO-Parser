@@ -75,7 +75,7 @@
         a                       mvco:Permission ;
         rdfs:label              "Record label authorises streaming service" ;
         mco-core:issuedIn       <http://mpeg.org/contract1> ;
-        mvco:issuedBy           <http://mpeg.org/Aggregator> ;
+        mvco:issuedBy           <http://mpeg.org/RecordLabel> ;
         mco-core:permitsAction  <http://mpeg.org/action2> .
 
 <http://mpeg.org/obligation1>
