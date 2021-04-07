@@ -1,11 +1,7 @@
 const parseTTL = require('@frogcat/ttl2jsonld').parse;
-const fs = require('fs');
 const lut = require('./lookup-tables/');
 const { handleContract, handleMCODeonticExpression } = require('./handlers/');
 const { getType } = require('./handlers/lib/Utils');
-const commandLineArgs = require('command-line-args');
-const optionDefinitions = [{ name: 'contract', alias: 'c', type: String }];
-const options = commandLineArgs(optionDefinitions);
 
 const getContractFromMCO = (ttl) => {
   const jsonLDGraph = {};
@@ -40,7 +36,4 @@ const getContractFromMCO = (ttl) => {
   return mediaContractualObjects;
 };
 
-const contractPath = options.contract;
-
-const ttl = fs.readFileSync(contractPath, 'utf-8');
-console.log(getContractFromMCO(ttl));
+module.exports = { getContractFromMCO };

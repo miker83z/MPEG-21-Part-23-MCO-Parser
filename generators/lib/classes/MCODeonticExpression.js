@@ -24,11 +24,12 @@ const mcoPermissionObj = {
 };
 
 const generateMCODeonticExpression = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = mcoDeonticExpressionObj;
   let deonticType = 'MCODeonticExpression';
 
   if (classData.length > 1) {
+    obj.class = classData[1];
     deonticType = classData[1];
     switch (classData[1]) {
       case 'MCOPermission':

@@ -8,7 +8,7 @@ const textObj = {
 };
 
 const generateTextClause = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = textObj;
 
   Object.keys(payload).forEach((k) => {

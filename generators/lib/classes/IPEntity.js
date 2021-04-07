@@ -24,11 +24,12 @@ const segmentObj = {
 };
 
 const generateIPEntity = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = ipentityObj;
   let ipentityType = 'Simple';
 
   if (classData.length > 1) {
+    obj.class = classData[1];
     ipentityType = classData[1];
     switch (classData[1]) {
       case 'Segment':

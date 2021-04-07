@@ -35,11 +35,12 @@ const notifyObj = {
 };
 
 const generateAction = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = actionObj;
   let actionType = 'Simple';
 
   if (classData.length > 1) {
+    obj.class = classData[1];
     actionType = classData[1];
     switch (classData[1]) {
       case 'Trade':

@@ -77,11 +77,12 @@ const userTimeAccessObj = {
 };
 
 const generateFact = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = factObj;
   let factType = 'Simple';
 
   if (classData.length > 1) {
+    obj.class = classData[1];
     factType = classData[1];
     switch (classData[1]) {
       case 'FactComposition':

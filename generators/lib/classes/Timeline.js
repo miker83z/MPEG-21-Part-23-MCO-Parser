@@ -7,7 +7,7 @@ const timelineObj = {
 };
 
 const generateTimeline = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = timelineObj;
 
   Object.keys(payload).forEach((k) => {

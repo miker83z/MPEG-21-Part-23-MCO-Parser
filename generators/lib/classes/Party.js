@@ -27,10 +27,11 @@ const organizationObj = {
 };
 
 const generateParty = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = partyObj;
 
-  if (classData.length > 1)
+  if (classData.length > 1) {
+    obj.class = classData[1];
     switch (classData[1]) {
       case 'MCOUser':
         modelObj = userObj;
@@ -43,6 +44,7 @@ const generateParty = (classData, payload) => {
       default:
         break;
     }
+  }
 
   Object.keys(payload).forEach((k) => {
     if (lut[k] !== undefined) addElement(modelObj, obj, lut[k], payload[k], k);

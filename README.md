@@ -16,14 +16,16 @@ npm install
 To use the parser execute one of the following command in the main directory:
 
 ```
-npm index.js -c [ turtle file path ]
-npm index.js --contract [ turtle file path ]
+node test/index.js -c [ turtle file path ]
+node test/index.js --contract [ turtle file path ]
 ```
+
+Importing this module will provide with a method `getContractFromMCO` that takes in input a string in Turtle form and returns the related Media Contractual Objects.
 
 ## Test
 
 To test the parser execute the following command in the main directory:
 
 ```
-node index.js -c turtle/new/use-case-stream-small-label.ttl
+node test/index.js -c turtle/new/use-case-stream-small-label.ttl
 ```

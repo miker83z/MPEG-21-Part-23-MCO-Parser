@@ -20,7 +20,7 @@ const contractObj = {
 };
 
 const generateContract = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = contractObj;
 
   Object.keys(payload).forEach((k) => {

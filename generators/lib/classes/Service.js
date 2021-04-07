@@ -7,11 +7,12 @@ const serviceObj = {
 };
 
 const generateService = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = serviceObj;
   let serviceType = 'Simple';
 
   if (classData.length > 1) {
+    obj.class = classData[1];
     serviceType = classData[1];
   }
   addElement(modelObj, obj, 'type', serviceType);

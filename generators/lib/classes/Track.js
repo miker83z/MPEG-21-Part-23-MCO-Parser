@@ -8,7 +8,7 @@ const trackObj = {
 };
 
 const generateTrack = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = trackObj;
 
   Object.keys(payload).forEach((k) => {

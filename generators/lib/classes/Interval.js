@@ -11,7 +11,7 @@ const intervalObj = {
 };
 
 const generateInterval = (classData, payload) => {
-  const obj = {};
+  const obj = { class: classData[0] };
   let modelObj = intervalObj;
 
   Object.keys(payload).forEach((k) => {
