@@ -35,8 +35,10 @@ const generateParty = (classData, payload) => {
     switch (classData[1]) {
       case 'MCOUser':
         modelObj = userObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'role', classData[2]);
+        }
         break;
       case 'Organization':
         modelObj = organizationObj;

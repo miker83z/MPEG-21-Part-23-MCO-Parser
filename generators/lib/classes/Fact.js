@@ -87,31 +87,41 @@ const generateFact = (classData, payload) => {
     switch (classData[1]) {
       case 'FactComposition':
         modelObj = factCompositionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'compositionType', classData[2]);
+        }
         break;
       case 'ActionEventFact':
         modelObj = actionEventFactObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'status', classData[2]);
+        }
         break;
       case 'TogetherWith':
         modelObj = togetherWithObj;
         break;
       case 'AccessPolicy':
         modelObj = onlyRestrictionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       case 'DeliverModality':
         modelObj = onlyRestrictionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       case 'Device':
         modelObj = onlyRestrictionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       case 'IPEntityContext':
         modelObj = ipentityContextObj;
@@ -127,16 +137,20 @@ const generateFact = (classData, payload) => {
         break;
       case 'Means':
         modelObj = onlyRestrictionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       case 'Runs':
         modelObj = runsObj;
         break;
       case 'ServiceAccessPolicy':
         modelObj = onlyRestrictionObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       case 'ServiceChannelContext':
         modelObj = serviceChannelContextObj;
@@ -146,8 +160,10 @@ const generateFact = (classData, payload) => {
         break;
       case 'UserTimeAccess':
         modelObj = userTimeAccessObj;
-        if (classData.length > 2)
+        if (classData.length > 2) {
+          obj.class = classData[2];
           addElement(modelObj, obj, 'restriction', classData[2]);
+        }
         break;
       default:
         break;

@@ -78,12 +78,12 @@
   "mco-ipre:mobiletelecommunicationdevice": [
     "Fact",
     "Device",
-    "mco-ipre:MobileTelecommunicationDevice"
+    "MobileTelecommunicationDevice"
   ],
   "mco-ipre:mobiletelecommunicationtechnology": [
     "Fact",
     "Means",
-    "mco-ipre:MobileTelecommunicationTechnology"
+    "MobileTelecommunicationTechnology"
   ],
   "mco-ipre:nonlinear": ["Fact", "DeliveryModality", "NonLinear"],
   "mco-ipre:novelization": ["Action", "Novelization"],
@@ -222,10 +222,5 @@
   "mvco:workinstancecopy": ["IPEntity", "WorkInstanceCopy"],
   "mvco:workmanifestation": ["IPEntity", "WorkManifestation"],
   "mvco:workmanifestationcopy": ["IPEntity", "WorkManifestationCopy"],
-
-  "vcard:vcard": ["VCard"],
-  "mco-ipre:relact": ["Action", "RelAct"],
-  "mco-ipre:payment": ["Action", "Payment"],
-  "mvco-ipre:providematerial": ["Action", "Provide"],
-  "mvco:play": ["Action", "Play"]
+  "vcard:vcard": ["VCard"]
 }
