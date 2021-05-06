@@ -3,6 +3,30 @@ const lut = require('./lookup-tables/');
 const { handleContract, handleMCODeonticExpression } = require('./handlers/');
 const { getType } = require('./handlers/lib/Utils');
 
+const formatIntoMediaContractualObjects = (mediaContract) => {
+  const finalMCObjects = { contracts: [] };
+  // Search for all contract objects
+  Object.values(mediaContract).forEach((element) => {
+    if (element.class === 'Contract') {
+      Object.keys(element).forEach((contractKey) => {
+        if (
+          element[contractKey] instanceof Array &&
+          element[contractKey].length > 0
+        ) {
+          const temp = {};
+          element[contractKey].forEach((arrayElement) => {
+            temp[arrayElement] = mediaContract[arrayElement];
+          });
+          element[contractKey] = temp;
+        }
+      });
+      finalMCObjects.contracts.push(element);
+    }
+  });
+
+  return finalMCObjects;
+};
+
 const getContractFromMCO = (ttl) => {
   const jsonLDGraph = {};
   const mediaContractualObjects = {};
@@ -33,7 +57,7 @@ const getContractFromMCO = (ttl) => {
     }
   });
 
-  return mediaContractualObjects;
+  return formatIntoMediaContractualObjects(mediaContractualObjects);
 };
 
 module.exports = { getContractFromMCO };

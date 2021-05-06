@@ -44,7 +44,8 @@ const generateMCODeonticExpression = (classData, payload) => {
   Object.keys(payload).forEach((k) => {
     if (lut[k.toLowerCase()] !== undefined)
       addElement(modelObj, obj, lut[k.toLowerCase()], payload[k], k);
-    else if (k !== '@type') addElement(modelObj, obj, 'extra', payload[k], k);
+    else if (k !== '@type')
+      addElement(modelObj, obj, 'metadata', payload[k], k);
   });
 
   return obj;

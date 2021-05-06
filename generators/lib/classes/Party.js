@@ -50,7 +50,8 @@ const generateParty = (classData, payload) => {
 
   Object.keys(payload).forEach((k) => {
     if (lut[k] !== undefined) addElement(modelObj, obj, lut[k], payload[k], k);
-    else if (k !== '@type') addElement(modelObj, obj, 'extra', payload[k], k);
+    else if (k !== '@type')
+      addElement(modelObj, obj, 'metadata', payload[k], k);
   });
 
   return obj;
