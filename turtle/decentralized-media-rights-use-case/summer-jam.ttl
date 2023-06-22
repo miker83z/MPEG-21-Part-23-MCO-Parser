@@ -1,0 +1,126 @@
+@prefix mco-ipre: <urn:mpeg:mpeg21:mco:ipre:2012#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix mvco:  <http://purl.oclc.org/NET/mvco.owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix mco-core: <urn:mpeg:mpeg21:mco:core:2012#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mco-pane: <urn:mpeg:mpeg21:mco:pane:2015#> .
+@prefix mco-rele: <urn:mpeg:mpeg21:mco:rele:2015#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/#> .
+
+<http://mpeg.org/contractDraft1>
+        a                  mco-core:Contract ;
+        rdfs:label         "CONTRACT DRAFT 1." ;
+        mco-core:hasParty  <http://mpeg.org/000000040721989X> , <http://mpeg.org/CopyrightControl> , <http://mpeg.org/CollectiveEAU> .
+
+<http://mpeg.org/000000040721989X>
+        a               mvco:User ;
+        rdfs:label      "Sander Molder" ;
+        dc:description  "Creator" ;
+        dc:identifier  "ISNI:000000040721989X" ;
+        mvco:belongsTo  <http://mpeg.org/CollectiveEAU> .
+
+
+<http://mpeg.org/1>
+        a               mvco:Producer ;
+        rdfs:label      "Sander Molder" ;
+        dc:description  "Composer" ;
+        dc:description  "Composer" ;
+        dc:identifier  "ISNI:000000040721989X" .
+
+<http://mpeg.org/2>
+        a               mvco:Producer ;
+        rdfs:label      "Sander Molder" ;
+        dc:description  "Publisher" ;
+        dc:description  "Publisher" ;
+        dc:identifier  "ISNI:000000040721989X" .
+
+<http://mpeg.org/1>
+        a               mvco:Producer ;
+        rdfs:label      "Sander Molder" ;
+        dc:description  "Creator" ;
+        dc:identifier  "ISNI:000000040721989X" .
+
+<http://mpeg.org/TIKSRekordsID>
+        a           mvco:Producer ;
+        rdfs:label  "TIKS Rekords" .
+
+<http://mpeg.org/CopyrightControl>
+        a           mvco:Distributor ;
+        rdfs:label  "Copyright Control" .
+
+<http://mpeg.org/CollectiveEAU>
+        a           mvco:Collective ;
+        rdfs:label  "EAU" .
+
+<http://mpeg.org/SummerJamID1>
+        a                       mvco:IPEntity ;
+        dc:title                "Summer Jam" ;
+        dc:identifier           "ISCC:KID35WWCXNXDW65MPZIKELR2ACRK4ZTEV45IHSOIBTSIFL2RC3YC4EY" ;
+        dc:identifier           "ISWC:T-305.818.916-1" ;
+        mvco:hasRightsOwner     <http://mpeg.org/CollectiveEAU>, <http://mpeg.org/CopyrightControl> .
+
+<http://mpeg.org/permission1>
+        a                       mvco:Permission ;
+        rdfs:label              "Collective can make copy (reproduction)" ;
+        mco-core:issuedIn       <http://mpeg.org/contractDraft1> ;
+        mvco:issuedBy           <http://mpeg.org/CopyrightControl> ;
+        mco-core:permitsAction  <http://mpeg.org/reproduction1> ;
+        mco-core:hasRequired    <http://mpeg.org/factSpatial1> .
+
+<http://mpeg.org/permission2>
+        a                       mvco:Permission ;
+        rdfs:label              "Copyright Control can make copy (reproduction)" ;
+        mco-core:issuedIn       <http://mpeg.org/contractDraft1> ;
+        mvco:issuedBy           <http://mpeg.org/CopyrightControl> ;
+        mco-core:permitsAction  <http://mpeg.org/reproduction2> .
+
+<http://mpeg.org/reproduction1>
+        a               mvco:MakeCopy ;
+        rdfs:label      "Collective makes a copy" ;
+        mvco:actedBy    <http://mpeg.org/CollectiveEAU> ;
+        mvco:actedOver  <http://mpeg.org/SummerJamID1> .
+
+<http://mpeg.org/reproduction2>
+        a               mvco:MakeCopy ;
+        rdfs:label      "Copyright Control makes a copy" ;
+        mvco:actedBy    <http://mpeg.org/CopyrightControl> ;
+        mvco:actedOver  <http://mpeg.org/SummerJamID1> .
+
+<http://mpeg.org/factSpatial1>
+        a               mco-ipre:SpatialContext ;
+        mco-ipre:inCountry   "ALL" .
+
+<http://mpeg.org/factSpatialEstonia>
+        a               mco-ipre:SpatialContext ;
+        mco-ipre:inCountry   "Estonia" .
+
+<http://mpeg.org/obligation1>
+        a                         mco-core:Obligation ;
+        rdfs:label                "Copyright Control pays 50% to song writer" ;
+        mco-core:issuedIn         <http://mpeg.org/contractDraft1> ;
+        mvco:issuedBy             <http://mpeg.org/CopyrightControl> ;
+        mco-core:obligatesAction  <http://mpeg.org/pay1> ;
+        mco-core:hasRequired      <http://mpeg.org/factSpatialEstonia> .
+
+<http://mpeg.org/pay1>
+        a                             mco-pane:Payment ;
+        rdfs:label                    "Payment" ;
+        mvco:actedBy                  <http://mpeg.org/CopyrightControl> ;
+        mco-pane:hasBeneficiary       <http://mpeg.org/000000040721989X> ;
+        mco-pane:hasIncomePercentage  50 .
+
+<http://mpeg.org/obligation2>
+        a                         mco-core:Obligation ;
+        rdfs:label                "Copyright Control pays 50% to song master" ;
+        mco-core:issuedIn         <http://mpeg.org/contractDraft1> ;
+        mvco:issuedBy             <http://mpeg.org/CopyrightControl> ;
+        mco-core:obligatesAction  <http://mpeg.org/pay2> .
+
+<http://mpeg.org/pay2>
+        a                             mco-pane:Payment ;
+        rdfs:label                    "Payment" ;
+        mvco:actedBy                  <http://mpeg.org/CopyrightControl> ;
+        mco-pane:hasBeneficiary       <http://mpeg.org/TIKSRekordsID> ;
+        mco-pane:hasIncomePercentage  50 .
+
