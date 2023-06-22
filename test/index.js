@@ -7,4 +7,4 @@ const options = commandLineArgs(optionDefinitions);
 const contractPath = options.contract;
 
 const ttl = fs.readFileSync(contractPath, 'utf-8');
-console.log(getContractFromMCO(ttl));
+console.log(JSON.stringify(getContractFromMCO(ttl), null, 2));

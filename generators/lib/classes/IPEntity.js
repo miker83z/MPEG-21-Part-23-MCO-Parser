@@ -1,27 +1,6 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/IPEntity');
-
-const ipentityObj = {
-  identifier: 'string',
-  type: 'string',
-  metadata: 'map',
-  socialTag: 'string',
-  isDigital: 'boolean',
-  rightsOwners: 'array',
-  isMadeUpOf: 'array',
-  resultedFrom: 'array',
-  isAudio: 'boolean',
-  segments: 'array',
-  tracks: 'array',
-  interval: 'array',
-  extra: 'map',
-};
-const segmentObj = {
-  ...ipentityObj,
-  segmentOf: 'string',
-  contains: 'array',
-  onTrack: 'array',
-};
+const { IPEntity: lut } = require('../../../lookup-tables');
+const { ipentityObj, segmentObj } = require('../types/IPEntity');
 
 const generateIPEntity = (classData, payload) => {
   const obj = { class: classData[0] };
@@ -34,6 +13,9 @@ const generateIPEntity = (classData, payload) => {
     switch (classData[1]) {
       case 'Segment':
         modelObj = segmentObj;
+        break;
+      case 'Data':
+        obj.class = classData[classData.length - 1];
         break;
       default:
         break;

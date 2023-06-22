@@ -1,10 +1,6 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/Service');
-
-const serviceObj = {
-  identifier: 'string',
-  type: 'string',
-};
+const { Service: lut } = require('../../../lookup-tables');
+const { serviceObj } = require('../types/Service');
 
 const generateService = (classData, payload) => {
   const obj = { class: classData[0] };
@@ -20,7 +16,8 @@ const generateService = (classData, payload) => {
   Object.keys(payload).forEach((k) => {
     if (lut[k.toLowerCase()] !== undefined)
       addElement(modelObj, obj, lut[k.toLowerCase()], payload[k], k);
-    else if (k !== '@type') console.log('Warning! Left out:' + payload[k]); //addElement(modelObj, obj, 'extra', payload[k], k);
+    else if (k !== '@type')
+      console.log('Warning! Left out:' + payload[k] + ', because:' + k); //addElement(modelObj, obj, 'extra', payload[k], k);
   });
 
   return obj;

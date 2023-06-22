@@ -23,7 +23,7 @@ const handleTextClause = (
   // update contract
   const referencedContract = mediaContractualObjects[parentContractId];
   addElement(
-    { objects: 'array' },
+    { textClauses: 'array' },
     referencedContract,
     'textClauses',
     textClauseObj.identifier

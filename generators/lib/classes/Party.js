@@ -1,30 +1,11 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/Party');
-
-const partyObj = {
-  identifier: 'string',
-  metadata: 'map',
-  name: 'string',
-  details: 'map',
-  address: 'string',
-  deonticsIssued: 'array',
-  actionsIsSubject: 'array',
-  signature: 'string',
-  extra: 'map',
-};
-const userObj = {
-  ...partyObj,
-  role: 'string',
-  signature: 'string',
-  socialTag: 'string',
-  actOnBehalfOf: 'array',
-  belongsToCollective: 'array',
-  isRightsOwnerOf: 'array',
-};
-const organizationObj = {
-  ...partyObj,
-  signatory: 'string',
-};
+const { Party: lut } = require('../../../lookup-tables');
+const {
+  partyObj,
+  userObj,
+  organizationObj,
+  legalEntityObj,
+} = require('../types/Party');
 
 const generateParty = (classData, payload) => {
   const obj = { class: classData[0] };
@@ -42,6 +23,10 @@ const generateParty = (classData, payload) => {
         break;
       case 'Organization':
         modelObj = organizationObj;
+        break;
+      case 'LegalEntity':
+        modelObj = legalEntityObj;
+        obj.class = classData[classData.length - 1];
         break;
       default:
         break;

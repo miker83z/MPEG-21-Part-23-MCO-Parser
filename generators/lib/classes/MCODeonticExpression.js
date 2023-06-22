@@ -1,27 +1,9 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/MCODeonticExpression');
-
-const mcoDeonticExpressionObj = {
-  identifier: 'string',
-  type: 'string',
-  issuedIn: 'string',
-  metadata: 'map',
-  textClauses: 'array',
-  act: 'string',
-  actedBySubject: 'string',
-  actObjects: 'array',
-  resultantObject: 'array',
-  constraints: 'array',
-  issuer: 'string',
-  extra: 'map',
-};
-const mcoPermissionObj = {
-  ...mcoDeonticExpressionObj,
-  percentage: 'number',
-  incomePercentage: 'number',
-  isExclusive: 'boolean',
-  hasSublicenseRight: 'boolean',
-};
+const { MCODeonticExpression: lut } = require('../../../lookup-tables');
+const {
+  mcoDeonticExpressionObj,
+  mcoPermissionObj,
+} = require('../types/MCODeonticExpression');
 
 const generateMCODeonticExpression = (classData, payload) => {
   const obj = { class: classData[0] };

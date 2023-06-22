@@ -1,13 +1,6 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/Track');
-
-const intervalObj = {
-  identifier: 'string',
-  start: 'string',
-  end: 'string',
-  duration: 'string',
-  onTimeline: 'string',
-};
+const { Interval: lut } = require('../../../lookup-tables');
+const { intervalObj } = require('../types/Interval');
 
 const generateInterval = (classData, payload) => {
   const obj = { class: classData[0] };
@@ -16,7 +9,8 @@ const generateInterval = (classData, payload) => {
   Object.keys(payload).forEach((k) => {
     if (lut[k.toLowerCase()] !== undefined)
       addElement(modelObj, obj, lut[k.toLowerCase()], payload[k], k);
-    else if (k !== '@type') console.log('Warning! Left out:' + payload[k]); //addElement(modelObj, obj, 'extra', payload[k], k);
+    else if (k !== '@type')
+      console.log('Warning! Left out:' + payload[k] + ', because:' + k); //addElement(modelObj, obj, 'extra', payload[k], k);
   });
 
   return obj;

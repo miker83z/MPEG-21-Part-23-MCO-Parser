@@ -1,4 +1,4 @@
-// this that is there to avoid circular dependency
-const { handleAction } = require('./MCODeonticExpression');
+// To avoid module exports inside circular dependency
+const { handleAction } = require('./commonHandlers');
 
 module.exports = { handleAction };

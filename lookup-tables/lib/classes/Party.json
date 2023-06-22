@@ -2,6 +2,7 @@
   "@id": ["identifier"],
   "mco-core:hasvcard": ["details"],
   "dc:description": ["metadata"],
+  "dc:identifier": ["metadata"],
   "mco-core:address": ["address"],
   "mco-core:signature": ["signature"],
   "mvco:hassocialtag": ["socialTag"],

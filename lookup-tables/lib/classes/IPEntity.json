@@ -1,6 +1,8 @@
 {
   "@id": ["identifier"],
   "dc:description": ["metadata"],
+  "dc:identifier": ["metadata"],
+  "dc:title": ["metadata"],
   "mvco:hassocialtag": ["socialTag"],
   "avco:isdigital": ["isDigital"],
   "mvco:hasrightsowner": ["rightsOwners"],

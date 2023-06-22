@@ -1,22 +1,6 @@
 const { addElement } = require('../AddElement');
-const lut = require('../../../lookup-tables/lib/classes/Contract');
-
-const contractObj = {
-  identifier: 'string',
-  metadata: 'map',
-  governingLaw: 'string',
-  court: 'string',
-  isCourtJurisdictionExclusive: 'boolean',
-  textVersion: 'string',
-  encryptedTextVersion: 'string',
-  contractRelations: 'map',
-  parties: 'array',
-  otherPersonUsers: 'array',
-  deontics: 'array',
-  actions: 'array',
-  objects: 'array',
-  signatories: 'array',
-};
+const { Contract: lut } = require('../../../lookup-tables');
+const { contractObj } = require('../types/Contract');
 
 const generateContract = (classData, payload) => {
   const obj = { class: classData[0] };
